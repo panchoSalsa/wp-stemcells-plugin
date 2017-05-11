@@ -1,0 +1,557 @@
+{
+  "schema": {
+    "name": "wpdata",
+    "version": 1.1,
+    "uniqueKey": "id",
+    "defaultSearchField": "text",
+    "solrQueryParser": {
+      "defaultOperator": "OR"
+    },
+    "fieldTypes": [
+      {
+        "name": "alphaOnlySort",
+        "class": "solr.TextField",
+        "omitNorms": true,
+        "sortMissingLast": true,
+        "analyzer": {
+          "tokenizer": {
+            "class": "solr.KeywordTokenizerFactory"
+          },
+          "filters": [
+            {
+              "class": "solr.LowerCaseFilterFactory"
+            },
+            {
+              "class": "solr.TrimFilterFactory"
+            },
+            {
+              "class": "solr.PatternReplaceFilterFactory",
+              "pattern": "([^a-z])",
+              "replace": "all",
+              "replacement": ""
+            }
+          ]
+        }
+      },
+      {
+        "name": "boolean",
+        "class": "solr.BoolField",
+        "omitNorms": true,
+        "sortMissingLast": true
+      },
+      {
+        "name": "date",
+        "class": "solr.TrieDateField",
+        "omitNorms": true,
+        "sortMissingLast": true
+      },
+      {
+        "name": "double",
+        "class": "solr.TrieDoubleField",
+        "omitNorms": true
+      },
+      {
+        "name": "float",
+        "class": "solr.TrieFloatField",
+        "omitNorms": true
+      },
+      {
+        "name": "ignored",
+        "class": "solr.StrField",
+        "indexed": false,
+        "stored": false,
+        "multiValued": true
+      },
+      {
+        "name": "integer",
+        "class": "solr.TrieIntField",
+        "omitNorms": true
+      },
+      {
+        "name": "latitude_longitude",
+        "class": "solr.LatLonType",
+        "subFieldSuffix": "_coordinate"
+      },
+      {
+        "name": "long",
+        "class": "solr.TrieLongField",
+        "omitNorms": true
+      },
+      {
+        "name": "random",
+        "class": "solr.RandomSortField",
+        "indexed": true
+      },
+      {
+        "name": "string",
+        "class": "solr.StrField",
+        "omitNorms": true,
+        "sortMissingLast": true
+      },
+      {
+        "name": "text",
+        "class": "solr.TextField",
+        "positionIncrementGap": "100",
+        "indexAnalyzer": {
+          "tokenizer": {
+            "class": "solr.WhitespaceTokenizerFactory"
+          },
+          "filters": [
+            {
+              "class": "solr.StopFilterFactory",
+              "words": "stopwords.txt",
+              "ignoreCase": "true"
+            },
+            {
+              "class": "solr.WordDelimiterFilterFactory",
+              "catenateNumbers": "1",
+              "generateNumberParts": "1",
+              "splitOnCaseChange": "1",
+              "generateWordParts": "1",
+              "catenateAll": "0",
+              "catenateWords": "1"
+            },
+            {
+              "class": "solr.LowerCaseFilterFactory"
+            },
+            {
+              "class": "solr.EnglishPossessiveFilterFactory"
+            },
+            {
+              "class": "solr.PorterStemFilterFactory"
+            }
+          ]
+        },
+        "queryAnalyzer": {
+          "tokenizer": {
+            "class": "solr.WhitespaceTokenizerFactory"
+          },
+          "filters": [
+            {
+              "class": "solr.StopFilterFactory",
+              "words": "stopwords.txt",
+              "ignoreCase": "true"
+            },
+            {
+              "class": "solr.WordDelimiterFilterFactory",
+              "catenateNumbers": "0",
+              "generateNumberParts": "1",
+              "splitOnCaseChange": "1",
+              "generateWordParts": "1",
+              "catenateAll": "0",
+              "catenateWords": "0"
+            },
+            {
+              "class": "solr.LowerCaseFilterFactory"
+            },
+            {
+              "class": "solr.EnglishPossessiveFilterFactory"
+            },
+            {
+              "class": "solr.PorterStemFilterFactory"
+            }
+          ]
+        }
+      },
+      {
+        "name": "textSpell",
+        "class": "solr.TextField",
+        "positionIncrementGap": "100",
+        "analyzer": {
+          "tokenizer": {
+            "class": "solr.StandardTokenizerFactory"
+          },
+          "filters": [
+            {
+              "class": "solr.LowerCaseFilterFactory"
+            },
+            {
+              "class": "solr.RemoveDuplicatesTokenFilterFactory"
+            }
+          ]
+        }
+      },
+      {
+        "name": "textTight",
+        "class": "solr.TextField",
+        "positionIncrementGap": "100",
+        "analyzer": {
+          "tokenizer": {
+            "class": "solr.WhitespaceTokenizerFactory"
+          },
+          "filters": [
+            {
+              "class": "solr.WordDelimiterFilterFactory",
+              "catenateNumbers": "1",
+              "generateNumberParts": "0",
+              "generateWordParts": "0",
+              "catenateAll": "0",
+              "catenateWords": "1"
+            },
+            {
+              "class": "solr.LowerCaseFilterFactory"
+            },
+            {
+              "class": "solr.EnglishPossessiveFilterFactory"
+            },
+            {
+              "class": "solr.PorterStemFilterFactory"
+            }
+          ]
+        }
+      },
+      {
+        "name": "text_lws",
+        "class": "solr.TextField",
+        "positionIncrementGap": "100",
+        "analyzer": {
+          "tokenizer": {
+            "class": "solr.WhitespaceTokenizerFactory"
+          },
+          "filters": [
+            {
+              "class": "solr.LowerCaseFilterFactory"
+            }
+          ]
+        }
+      },
+      {
+        "name": "text_ws",
+        "class": "solr.TextField",
+        "positionIncrementGap": "100",
+        "analyzer": {
+          "tokenizer": {
+            "class": "solr.WhitespaceTokenizerFactory"
+          }
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "PID",
+        "type": "string",
+        "indexed": true,
+        "required": true,
+        "stored": true
+      },
+      {
+        "name": "_text_",
+        "type": "text",
+        "multiValued": true,
+        "indexed": true,
+        "stored": false
+      },
+      {
+        "name": "_version_",
+        "type": "long",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "author",
+        "type": "string",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "autocomplete",
+        "type": "textSpell",
+        "multiValued": true,
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "blogdomain",
+        "type": "string",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "blogid",
+        "type": "string",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "blogpath",
+        "type": "string",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "categories",
+        "type": "string",
+        "multiValued": true,
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "categoriessrch",
+        "type": "text_lws",
+        "multiValued": true,
+        "indexed": true,
+        "stored": false
+      },
+      {
+        "name": "comments",
+        "type": "text",
+        "multiValued": true,
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "content",
+        "type": "text",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "date",
+        "type": "date",
+        "indexed": true,
+        "stored": false
+      },
+      {
+        "name": "displaydate",
+        "type": "string",
+        "indexed": false,
+        "stored": true
+      },
+      {
+        "name": "displaymodified",
+        "type": "string",
+        "indexed": false,
+        "stored": true
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "indexed": true,
+        "required": true,
+        "stored": true
+      },
+      {
+        "name": "modified",
+        "type": "date",
+        "indexed": true,
+        "stored": false
+      },
+      {
+        "name": "numcomments",
+        "type": "integer",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "permalink",
+        "type": "string",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "spell",
+        "type": "textSpell",
+        "multiValued": true,
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "tags",
+        "type": "string",
+        "multiValued": true,
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "tagssrch",
+        "type": "text_lws",
+        "multiValued": true,
+        "indexed": true,
+        "stored": false
+      },
+      {
+        "name": "text",
+        "type": "text",
+        "multiValued": true,
+        "indexed": true,
+        "stored": false
+      },
+      {
+        "name": "title",
+        "type": "text_lws",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "wp",
+        "type": "string",
+        "indexed": true,
+        "stored": true
+      }
+    ],
+    "dynamicFields": [
+      {
+        "name": "*_coordinate",
+        "type": "double",
+        "indexed": true,
+        "stored": false
+      },
+      {
+        "name": "ignored_*",
+        "type": "ignored"
+      },
+      {
+        "name": "random*",
+        "type": "random"
+      },
+      {
+        "name": "*_srch",
+        "type": "text_lws",
+        "multiValued": true,
+        "indexed": true,
+        "stored": false
+      },
+      {
+        "name": "*_str",
+        "type": "string",
+        "multiValued": true,
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "*_dt",
+        "type": "date",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "*_ll",
+        "type": "latitude_longitude",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "*_i",
+        "type": "integer",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "*_s",
+        "type": "string",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "*_l",
+        "type": "long",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "*_t",
+        "type": "text",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "*_b",
+        "type": "boolean",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "*_f",
+        "type": "float",
+        "indexed": true,
+        "stored": true
+      },
+      {
+        "name": "*_d",
+        "type": "double",
+        "indexed": true,
+        "stored": true
+      }
+    ],
+    "copyFields": [
+      {
+        "source": "categories",
+        "dest": "autocomplete"
+      },
+      {
+        "source": "categories",
+        "dest": "categoriessrch"
+      },
+      {
+        "source": "categories",
+        "dest": "spell"
+      },
+      {
+        "source": "categories",
+        "dest": "text"
+      },
+      {
+        "source": "comments",
+        "dest": "autocomplete"
+      },
+      {
+        "source": "comments",
+        "dest": "spell"
+      },
+      {
+        "source": "comments",
+        "dest": "text"
+      },
+      {
+        "source": "content",
+        "dest": "autocomplete"
+      },
+      {
+        "source": "content",
+        "dest": "spell"
+      },
+      {
+        "source": "content",
+        "dest": "text"
+      },
+      {
+        "source": "permalink",
+        "dest": "text"
+      },
+      {
+        "source": "tags",
+        "dest": "autocomplete"
+      },
+      {
+        "source": "tags",
+        "dest": "spell"
+      },
+      {
+        "source": "tags",
+        "dest": "tagssrch"
+      },
+      {
+        "source": "tags",
+        "dest": "text"
+      },
+      {
+        "source": "title",
+        "dest": "autocomplete"
+      },
+      {
+        "source": "title",
+        "dest": "spell"
+      },
+      {
+        "source": "title",
+        "dest": "text"
+      }
+    ]
+  }
+}
