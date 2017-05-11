@@ -182,8 +182,22 @@ class Plugin_Name {
 
 		$plugin_public = new Plugin_Name_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+
+		// Below are our "public" frontend related actions and filters hooks
+
+        // Cleanup - Actions and filters
+          //Actions
+        $this->loader->add_action( 'init', $plugin_public, 'plugin_name_cleanup' );
+        $this->loader->add_action( 'wp_loaded', $plugin_public, 'plugin_name_remove_comments_inline_styles' );
+        $this->loader->add_action( 'wp_loaded', $plugin_public, 'plugin_name_remove_gallery_styles' );
+        $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'plugin_name_cdn_jquery', PHP_INT_MAX);
+
+           //Filters
+        $this->loader->add_filter('wp_headers', $plugin_public, 'plugin_name_remove_x_pingback');
+        $this->loader->add_filter( 'body_class', $plugin_public, 'plugin_name_body_class_slug' );
 
 	}
 
