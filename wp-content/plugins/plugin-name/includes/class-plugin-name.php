@@ -169,6 +169,10 @@ class Plugin_Name {
 
 		// Save/Update our plugin options
 		$this->loader->add_action('admin_init', $plugin_admin, 'options_update');
+
+		//Admin Customizations
+		//ChromePhp::log("hello");
+		$this->loader->add_action( 'login_enqueue_scripts', $plugin_admin, 'plugin_name_login_css' );
 	}
 
 	/**
