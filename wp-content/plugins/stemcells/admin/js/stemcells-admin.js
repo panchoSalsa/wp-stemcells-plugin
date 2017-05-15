@@ -28,5 +28,15 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
+	$(document).ready(function(){
+		$('#csvmind_post-button').change(function(ev) {
+			console.log('show submit button');
+			$('#submit').css('visibility','visible');
+		});
+
+		// $('h1').on('click', function () {
+		// 	console.log('hello');
+		// })
+	});
 
 })( jQuery );

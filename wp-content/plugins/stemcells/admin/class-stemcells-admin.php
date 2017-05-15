@@ -73,6 +73,8 @@ class Stemcells_Admin {
 		 * class.
 		 */
 
+		// adding shopping cart icon to menu
+		//source=http://www.wpsuperstars.net/how-to-use-dashicons/
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/stemcells-admin.css', array('dashicons'), $this->version, 'all' );
 
 	}

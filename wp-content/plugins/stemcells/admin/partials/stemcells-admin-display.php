@@ -14,4 +14,14 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-hello
+
+<div>
+	<h1>CSV IMPORTER</h1>
+	<form>
+		<span>Select a CSV file to upload</span>
+		<br>
+		<input type="file" id="csvmind_post-button" value="import">
+		<br>
+		<input type="submit" value="import" id="submit">
+	</form>
+</div>
