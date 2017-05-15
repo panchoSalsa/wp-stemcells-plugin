@@ -73,9 +73,7 @@ class Stemcells_Admin {
 		 * class.
 		 */
 
-		// adding shopping cart icon to menu
-		//source=http://www.wpsuperstars.net/how-to-use-dashicons/
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/stemcells-admin.css', array('dashicons'), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/stemcells-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -99,6 +97,9 @@ class Stemcells_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/stemcells-admin.js', array( 'jquery' ), $this->version, false );
+
+		// wp_enqueue_script( 'papaparser', 'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.2/papaparse.js');
+		wp_enqueue_script( 'papaparser', 'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.2/papaparse.js');
 
 	}
 
@@ -127,4 +128,13 @@ class Stemcells_Admin {
 		include_once( 'partials/stemcells-admin-display.php' );
 	}
 
+	// add dashicons to front end
+	//source=http://www.wpsuperstars.net/how-to-use-dashicons/
+	public function load_dashicons_front_end() {
+		wp_enqueue_style( 'dashicons' );
+	}
+
+	// public function load_paparser_front_end() {
+	// 	wp_enqueue_script( 'papaparser', 'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.2/papaparse.js', array( 'jquery '));
+	// }
 }

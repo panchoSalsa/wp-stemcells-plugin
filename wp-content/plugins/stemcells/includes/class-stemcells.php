@@ -154,11 +154,17 @@ class Stemcells {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		// add dashicons to front end
-		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'load_dashicons_front_end' );
 
 		// add stemcells menu item
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_admin_menu' );
+
+		// add dashicons to front end
+		//source=http://www.wpsuperstars.net/how-to-use-dashicons/
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_admin, 'load_dashicons_front_end' );
+
+		// add paparser to admin front end
+		//source=http://www.wpsuperstars.net/how-to-use-dashicons/
+		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_admin, 'load_paparser_front_end' );
 	}
 
 	/**

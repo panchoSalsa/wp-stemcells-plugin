@@ -15,13 +15,24 @@
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 
-<div>
+<!-- parse csv using php -->
+<!-- <div>
 	<h1>CSV IMPORTER</h1>
-	<form>
+	<form enctype="multipart/form-data" action="parse-csv.php" method="POST">
 		<span>Select a CSV file to upload</span>
 		<br>
-		<input type="file" id="csvmind_post-button" value="import">
+		<input type="file" id="csvmind_post-button" name="upload" value="import">
 		<br>
 		<input type="submit" value="import" id="submit">
 	</form>
+</div> -->
+
+
+<!-- parse csv using javascript -->
+<!-- i decided not to use a form since we are sending the POST request through ajax -->
+<div>
+	<h1>CSV IMPORTER</h1>
+	<span>Select a CSV file to upload</span>
+	<br>
+	<input type="file" id="csvmind_post-button" name="upload" value="import">
 </div>
