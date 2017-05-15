@@ -46,14 +46,15 @@
 	function ajaxCall(data) {
 		// send data to php file through ajax
 		// source=http://stackoverflow.com/questions/6616539/post-ajax-data-to-php-and-return-data
-		// var data = {'data': data};
 		$.ajax({
 			url: 'parse-csv.php',
 			type: 'POST',
-			// dataType: 'json',
-			// contentType: "application/json",
-			// data: JSON.stringify(data),
-			data: {data: data},
+
+			// must stringify(data) because php does not understand
+			// [Object, Object, Object]
+			// it only understands
+			// [{"Record ID":"92",...}, {},... {}]
+			data: {data: JSON.stringify(data)},
 			success: function(result){
 				console.log('ajaxCall() success');
 
@@ -82,7 +83,7 @@
 			{
 				// executed after all files are complete
 				console.log('complete');
-				console.log(results.data);
+				// console.log(results.data);
 
 				// make ajax call to parse-csv.php
 				ajaxCall(results.data);
