@@ -15,9 +15,9 @@
  * @wordpress-plugin
  * Plugin Name:       stemcells
  * Plugin URI:        https://www.mind.uci.edu/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       stemcells custom plugin-importer.
  * Version:           1.0.0
- * Author:            Ken Francisco
+ * Author:            Ken and Francisco
  * Author URI:        https://www.mind.uci.edu/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

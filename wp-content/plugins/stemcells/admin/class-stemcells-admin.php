@@ -73,7 +73,7 @@ class Stemcells_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/stemcells-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/stemcells-admin.css', array('dashicons'), $this->version, 'all' );
 
 	}
 
@@ -98,6 +98,31 @@ class Stemcells_Admin {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/stemcells-admin.js', array( 'jquery' ), $this->version, false );
 
+	}
+
+
+	public function add_plugin_admin_menu() {
+
+	    /*
+	     * Add a settings page for this plugin to the Settings menu.
+	     *
+	     * NOTE:  Alternative menu locations are available via WordPress administration menu functions.
+	     *
+	     *        Administration Menus: http://codex.wordpress.org/Administration_Menus
+	     *
+	     */
+
+
+	    // adding menu to admin dashboard
+	    // source=https://premium.wpmudev.org/blog/creating-wordpress-admin-pages/?utm_expid=3606929-105.kKHVTz43T_CV513Vo9oSow.0&utm_referrer=https%3A%2F%2Fwww.google.com%2F
+	    // source=https://developer.wordpress.org/reference/functions/add_menu_page/
+
+	    ChromePhp::log('admin_menu()');
+	    add_menu_page( 'stemcells', 'stemcells', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page'), 'dashicons-cart');
+	}
+
+	public function display_plugin_setup_page() {
+		include_once( 'partials/stemcells-admin-display.php' );
 	}
 
 }
