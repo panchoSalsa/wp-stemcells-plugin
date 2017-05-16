@@ -146,6 +146,10 @@ class Stemcells_Admin {
 		}
 		else {
 			echo 'Variable is not NULL';
+			foreach($json_array as $item) {
+				// echo 'Record ID: ' . $item['Record ID'] . ',';
+				$this->createProduct($item);
+			}
 		}
 
 		// this is required to terminate immediately and return a proper response
@@ -169,25 +173,41 @@ class Stemcells_Admin {
 	}
 
 	private function createProduct($item) {
+		echo 'createProduct()';
+
+		// source=https://wordpress.stackexchange.com/questions/137501/how-to-add-product-in-woocommerce-with-php-code
+		$post_id = wp_insert_post( array(
+			'post_title' => $item['name'],
+			'post_status' => 'publish',
+			'post_type' => "product"
+		) );
+		wp_set_object_terms( $post_id, 'student', 'product_cat' );
+		wp_set_object_terms( $post_id, 'simple', 'product_type' );
+
+		update_post_meta( $post_id, '_visibility', 'visible' );
+		update_post_meta( $post_id, '_stock_status', 'instock');
+		update_post_meta( $post_id, 'total_sales', '0' );
+		update_post_meta( $post_id, '_downloadable', 'no' );
+		update_post_meta( $post_id, '_virtual', 'yes' );
+		update_post_meta( $post_id, '_regular_price', '$2.99' );
+		update_post_meta( $post_id, '_sale_price', '' );
+		update_post_meta( $post_id, '_purchase_note', '' );
+		update_post_meta( $post_id, '_featured', 'no' );
+		update_post_meta( $post_id, '_weight', '' );
+		update_post_meta( $post_id, '_length', '' );
+		update_post_meta( $post_id, '_width', '' );
+		update_post_meta( $post_id, '_height', '' );
+		update_post_meta( $post_id, '_sku', 'test03' );
+		update_post_meta( $post_id, '_product_attributes', array() );
+		update_post_meta( $post_id, '_sale_price_dates_from', '' );
+		update_post_meta( $post_id, '_sale_price_dates_to', '' );
+		update_post_meta( $post_id, '_price', '$2.99' );
+		update_post_meta( $post_id, '_sold_individually', '' );
+		update_post_meta( $post_id, '_manage_stock', 'no' );
+		update_post_meta( $post_id, '_backorders', 'no' );
+		update_post_meta( $post_id, '_stock', '' );
+
+		echo 'createProduct() exit';
 
 	}
-
-
-
-	// function handles POST Request
-	// converts json string -> json_array
-	// public function handleRequest() {
-	// 	// $data = $_POST['data'];
-
-	// 	// // transforming data into an array
-	// 	// // stripslashes is needed to remove '\'
-	// 	// // json_decode() will fail if '\' are present
-	// 	// // ex:
-	// 	// //{\"RecordID\":\"2\",\"name\":\"ken\"}
-	// 	// //{"RecordID":"1","name":"francisco"}
-	// 	// $json_array = json_decode(stripslashes($data), true);
-
-	// 	// return $json_array;
-	// 	echo 'hanlde request';
-	// }
 }
