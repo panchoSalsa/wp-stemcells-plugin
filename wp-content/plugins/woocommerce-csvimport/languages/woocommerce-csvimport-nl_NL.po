@@ -1,0 +1,810 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Woocommerce CSV Import\n"
+"POT-Creation-Date: 2015-08-06 15:04+0100\n"
+"PO-Revision-Date: 2015-09-05 22:08+0100\n"
+"Last-Translator: Allaerd Mensonides <info@allaerd.org>\n"
+"Language-Team: Allaerd Mensonides <info@allaerd.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-woocsv-import-admin.php:61
+msgid "CSV Import"
+msgstr ""
+
+#: admin/class-woocsv-import-admin.php:65
+msgid "Settings"
+msgstr "Instellingen"
+
+#: admin/class-woocsv-import-admin.php:68
+msgid "Docs"
+msgstr ""
+
+#: admin/class-woocsv-import-admin.php:71
+#: admin/partials/woocsv-import-admin-addons.php:9
+msgid "Add-ons"
+msgstr ""
+
+#: admin/class-woocsv-import-admin.php:183
+msgid ""
+"Something went wrong. We could not make a connection with the server. Check "
+"your permissions and rights the do ajax requests!"
+msgstr ""
+
+#: admin/class-woocsv-import-admin.php:184
+msgid "Done"
+msgstr "Klaar"
+
+#: admin/class-woocsv-import-admin.php:185
+msgid "Starting"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:12
+#, php-format
+msgid ""
+"You can find the latest version of the add-ons in your %s account page %s ."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:20
+msgid "Add-on"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:20
+msgid "Version"
+msgstr "Versie"
+
+#: admin/partials/woocsv-import-admin-addons.php:52
+msgid "Available add-ons"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:56
+msgid "Get Them (almost) all"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:58
+msgid ""
+"You get a discount for the add-ons in the bundle and updates are included "
+"for 360 days!"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:64
+msgid "Taxonomies"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:66
+msgid ""
+"With this add-on you can import additional taxonomies into Woocommerce. "
+"Custom taxonomies are used a lot in themes or extensions to add "
+"functionality to woocommerce. Brands is a custom taxonomy that might sound "
+"familiar."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:73
+msgid "Variable products"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:75
+msgid ""
+"Import and manage your variable products and set up attributes used for "
+"variations. Variable products are products like t-shirts, you have the min "
+"different colours and sizes."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:81
+msgid "Downloadable, external, grouped products"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:83
+msgid ""
+"With this add-on you can import Downloadable products, Grouped Products, "
+"External/Affiliate products and some additional fields like cross-sells and "
+"up-sells."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:89
+msgid "Attributes"
+msgstr "Attributen"
+
+#: admin/partials/woocsv-import-admin-addons.php:91
+msgid ""
+"Import global attributes into Woocommerce. Import one or multiple. Control "
+"there visibility and attach multiple at once to your product."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:97
+msgid "Custom Fields"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-addons.php:99
+msgid ""
+"Custom fields are used to store all kind of information. Lots of other "
+"extensions and other plugins use it to store their data. Use this add-on to "
+"fill all that data using your CSV."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:8
+msgid "Documentation"
+msgstr "Documentatie"
+
+#: admin/partials/woocsv-import-admin-docs.php:10
+msgid "Woocommerce CSV importer"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:11
+#, php-format
+msgid ""
+"Documentation is available in the %s knowledgebase %s. If you still have "
+"problems, feel free to drop me a mail at %s"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:12
+msgid "Common questions"
+msgstr "Veelgestelde vragen"
+
+#: admin/partials/woocsv-import-admin-docs.php:13
+msgid "Text is is cut during import or when i use special characters."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:15
+msgid "Make sure you encode you file in UTF-8."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:19
+msgid ""
+"When you import with images with url's the images are imported everytime"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:22
+msgid "What fields are available"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:24
+msgid ""
+"This is the unique identifier of your product. If a SKU is present it will "
+"be used to update!"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:25
+#: include/class-woocsv-import-settings.php:80
+msgid "ID"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:26
+msgid ""
+"This is the unique identifier of your product in the database. If a ID is "
+"present it will be used to update! Only use this if you know are really "
+"sure, best use the sku!"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:27
+msgid "post_status"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:28
+#, php-format
+msgid "%s<code>%s</code>"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:32
+msgid "post_title (mandatory)"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:33
+msgid "The title of your product"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:34
+msgid "post_content"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:35
+msgid "The description of your product"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:36
+msgid "post_excerpt"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:37
+msgid "The short description of your product"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:38
+msgid "category"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:39
+#, php-format
+msgid ""
+"The category of your product (or multiple). You can have multiple categories "
+"by separating them with a pipe %s. You can make subcategories with -> "
+"<code>cat1->subcat1</code> and you can mix them all <code>cat1->subcat1|cat2|"
+"cat3->subcat2->subsubcat1</code>."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:44
+msgid "tags"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:45
+msgid "You can add tags or multiple with the pipe separator."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:46
+msgid "manage_stock"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:47
+msgid "Enable or disable management of stock. Values:"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:48
+msgid "stock_status"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:49
+msgid ""
+"The stock status of your product. You have to set it yourself if you want. "
+"Values:"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:50
+msgid "backorders"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:51
+msgid "If you want tot allow backorders for your product. Values:"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:52
+msgid "stock"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:53
+msgid "The actual stock of your product."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:54
+msgid "regular_price, sale_price"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:55
+msgid ""
+"If you have a normal price. You can fill in regular price. If your product "
+"is on sale, you should fill in regular price and sale price. The sale price "
+"should be lower than the regular price."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:56
+msgid "weight, length, width, height"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:57
+msgid ""
+"You can fill in the dimensions and weight of your product using these fields."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:58
+msgid "tax_status"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:59
+msgid "The status of your product tax. Values:"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:60
+msgid "tax_class"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:61
+msgid "If you made any additional tax classes you can use this fields."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:62
+msgid "visibility"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:63
+msgid "Determines if your product is visible or not and where. Values:"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:64
+msgid "featured"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:65
+msgid ""
+"Determines if your product should be visible in any features lists or "
+"widgets. Values:"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:66
+msgid "featured_image"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:67
+msgid ""
+"You can add the featured image by adding the URL to it or the filename. If "
+"you enter the filename, you MUST upload it in advance with the media manager "
+"of wordpress"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:68
+msgid "product_gallery"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:69
+msgid ""
+"You can add multiple images to your product gallery. Add them in a pipe "
+"separated list. <code>image1.jpg|image2.jpg</code> You can put in valid "
+"URL's or filenames."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:70
+msgid "shipping_class"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:71
+msgid ""
+"You can add your custom shipping class. If the class does not exists it will "
+"be added."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:72
+msgid "comment_status"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:73
+msgid "You can set the enable/disable review with the following values:"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:74
+msgid "ping_status"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:75
+msgid "You can enable the ping status the following values:"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:76
+msgid "menu_order"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:77
+msgid "you can change the menu order with an given number. the default is"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:78
+msgid "change_stock"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:80
+msgid ""
+"Here you can enter the stock adjustment. It will be used to calculate the "
+"stock of an existing product. It does not work for new products. If you want "
+"to decrease the stock by 2 you enter"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:82
+msgid "post_author"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-docs.php:84
+#, php-format
+msgid "%s <code> % s</code> %s"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:11
+#: admin/partials/woocsv-import-admin-header-preview.php:14
+#: admin/partials/woocsv-import-admin-header.php:11
+#: admin/partials/woocsv-import-admin-header.php:14
+#: admin/partials/woocsv-import-admin-import-preview.php:10
+#: admin/partials/woocsv-import-admin-import.php:14
+msgid "Headers"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:13
+#: admin/partials/woocsv-import-admin-header.php:13
+#: admin/partials/woocsv-import-admin-import-preview.php:7
+#: admin/partials/woocsv-import-admin-import-preview.php:9
+#: admin/partials/woocsv-import-admin-import.php:11
+#: admin/partials/woocsv-import-admin-import.php:13
+msgid "Import"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:41
+#: admin/partials/woocsv-import-admin-import-preview.php:41
+msgid "I think you have the wrong separator"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:42
+#: admin/partials/woocsv-import-admin-import-preview.php:42
+msgid "Please goto the settings page and change your separator!"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:56
+msgid "Header preview"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:61
+msgid "Fields"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:62
+#: admin/partials/woocsv-import-admin-import-preview.php:52
+msgid "Row 1"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:63
+#: admin/partials/woocsv-import-admin-import-preview.php:53
+msgid "Row 2"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:64
+#: admin/partials/woocsv-import-admin-import-preview.php:54
+msgid "Row 3"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:65
+#: admin/partials/woocsv-import-admin-import-preview.php:55
+msgid "Row 4"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:73
+msgid "Skip"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header-preview.php:94
+#: admin/partials/woocsv-import-admin-settings.php:8
+msgid "save"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header.php:19
+msgid ""
+"Headers are the mappings between your CSV columns and the actual fields of "
+"woocommerce. It is essential that you make a header before you import. You "
+"can make multiple headers and use them for different CSV files or for the "
+"same. Example: one header to import new products and one to only merge "
+"prices and stock."
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header.php:25
+msgid "name"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header.php:26
+msgid "header"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header.php:43
+msgid "delete"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header.php:54
+msgid "Upload a CSV file to create a header"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-header.php:57
+#: admin/partials/woocsv-import-admin-import.php:34
+msgid "load"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-import-preview.php:20
+msgid "Could not upload file"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-import-preview.php:47
+msgid "Import preview"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-import-preview.php:51
+msgid "Header"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-import-preview.php:56
+msgid "Row 5"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-import-preview.php:89
+msgid "start"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-import.php:21
+msgid "Select a header"
+msgstr ""
+
+#: admin/partials/woocsv-import-admin-import.php:29
+msgid "Select a file"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:18
+msgid "Allowed Roles"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:22
+msgid "Field separator"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:26
+msgid "Skip the first row"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:30
+msgid "Add products to all categories"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:34
+msgid "Number of products to process simultaneously"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:38
+msgid "Merge products"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:42
+msgid "Debug"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:46
+msgid "Find product using"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:50
+msgid "Match authors by"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:54
+msgid "Convert to UTF-08"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:58
+msgid "Follow to location during image import"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:65
+#: include/class-woocsv-import-settings.php:100
+#: include/class-woocsv-import-settings.php:110
+#: include/class-woocsv-import-settings.php:119
+#: include/class-woocsv-import-settings.php:140
+#: include/class-woocsv-import-settings.php:172
+msgid "No"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:66
+#: include/class-woocsv-import-settings.php:101
+#: include/class-woocsv-import-settings.php:111
+#: include/class-woocsv-import-settings.php:120
+#: include/class-woocsv-import-settings.php:141
+#: include/class-woocsv-import-settings.php:173
+msgid "Yes"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:68
+msgid ""
+"When you import images using an URL, the server sometimes redirects you to "
+"the actual path. This settings enabled that you follow that path. If you "
+"have safe_mode or open_basedir enabled, disable this setting."
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:81
+msgid "Slug"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:82
+msgid "Email"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:83
+msgid "Login"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:85
+msgid ""
+"When you want the products to belong to a user you can select how the uses "
+"must be found. Using the ID, slug, email or login name of the user."
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:91
+msgid "Sku"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:92
+msgid "Title"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:94
+msgid ""
+"When you merge products, products are found by there SKU, this is the unique "
+"identifier. In some cases, when you have no SKU, the post title could be "
+"used."
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:103
+msgid "First lines in are often headers you do not want to import."
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:113
+msgid ""
+"When you enable debug, the javascript console will hold more information. IF "
+"you encounter problems the debug information may be useful in solving them."
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:128
+msgid "1"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:129
+msgid "10"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:130
+msgid "25"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:131
+msgid "50"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:132
+msgid "100"
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:134
+msgid ""
+"The importing proces works with AJAX calls to avoid timeouts on large CSV "
+"files. With this setting you can influence how many rows there are processed "
+"every call."
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:143
+msgid ""
+"If you enable this, products will be added to all categories on not only the "
+"latest. Example :<code>cat1->subcat1</code> , if the option is enabled, the "
+"product belongs to both else it will only belong to the sub categorie."
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:165
+msgid "These roles are allowed to import and change settings."
+msgstr ""
+
+#: include/class-woocsv-import-settings.php:175
+msgid "Convert strings to UTF-08 during import?"
+msgstr ""
+
+#: include/class-woocsv-import.php:199
+msgid "Upload directory is not writable, please check you permissions"
+msgstr ""
+
+#: include/class-woocsv-import.php:313
+msgid "row"
+msgstr ""
+
+#: include/class-woocsv-import.php:321
+msgid "Skipping the first row"
+msgstr ""
+
+#: include/class-woocsv-product.php:109
+msgid "No title, slug or content. Filled in dummy content"
+msgstr ""
+
+#: include/class-woocsv-product.php:116
+#, php-format
+msgid "post status changed from %s to publish"
+msgstr ""
+
+#: include/class-woocsv-product.php:123
+msgid "title is empty status changed to draft"
+msgstr ""
+
+#: include/class-woocsv-product.php:129
+#, php-format
+msgid "ping status changed from %s to ping"
+msgstr ""
+
+#: include/class-woocsv-product.php:135
+#, php-format
+msgid "menu order changed from %s to 0"
+msgstr ""
+
+#: include/class-woocsv-product.php:145
+#, php-format
+msgid "stock status changed from %s to instock"
+msgstr ""
+
+#: include/class-woocsv-product.php:151
+#, php-format
+msgid "visibility changed from %s to visible"
+msgstr ""
+
+#: include/class-woocsv-product.php:157
+#, php-format
+msgid "backorders changed from %s to no"
+msgstr ""
+
+#: include/class-woocsv-product.php:163
+#, php-format
+msgid "featured changed from %s to no"
+msgstr ""
+
+#: include/class-woocsv-product.php:169
+#, php-format
+msgid "manage_stock changed from %s to no"
+msgstr ""
+
+#: include/class-woocsv-product.php:186
+msgid "Product is on sale"
+msgstr ""
+
+#: include/class-woocsv-product.php:250
+msgid "Product could not be saved and skipped"
+msgstr ""
+
+#: include/class-woocsv-product.php:253
+#, php-format
+msgid "Product saved with ID: %s"
+msgstr ""
+
+#: include/class-woocsv-product.php:394
+msgid "featured image is imported using the URL"
+msgstr ""
+
+#: include/class-woocsv-product.php:397
+msgid "featured image is imported using the filename"
+msgstr ""
+
+#: include/class-woocsv-product.php:441
+#, php-format
+msgid "Image with url: %s could not be uploaded"
+msgstr ""
+
+#: include/class-woocsv-product.php:465
+#, php-format
+msgid "Image with url: %s uploaded"
+msgstr ""
+
+#: include/class-woocsv-product.php:521
+#, php-format
+msgid "Product found (ID), ID is: %s"
+msgstr ""
+
+#: include/class-woocsv-product.php:529 include/class-woocsv-product.php:562
+#, php-format
+msgid "ID : %s not found!"
+msgstr ""
+
+#: include/class-woocsv-product.php:543
+#, php-format
+msgid "Product found (SKU), ID is: %s"
+msgstr ""
+
+#: include/class-woocsv-product.php:545
+msgid "New product"
+msgstr ""
+
+#: include/class-woocsv-product.php:558
+#, php-format
+msgid "Product found (TITLE), ID is: %s"
+msgstr ""
+
+#: include/class-woocsv-product.php:586
+msgid "user found"
+msgstr ""
+
+#: include/class-woocsv-product.php:589
+msgid "user not found"
+msgstr ""
+
+#: include/class-woocsv-product.php:654
+#, php-format
+msgid "Change stock modus: stock changed from %s to %s"
+msgstr ""

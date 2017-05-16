@@ -98,7 +98,8 @@ class Stemcells_Admin {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/stemcells-admin.js', array( 'jquery' ), $this->version, false );
 
-		// wp_enqueue_script( 'papaparser', 'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.2/papaparse.js');
+		// download papaparser from CDN
+		// this js library allows easier csv parsing to json conversion 
 		wp_enqueue_script( 'papaparser', 'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.2/papaparse.js');
 
 	}
@@ -134,7 +135,59 @@ class Stemcells_Admin {
 		wp_enqueue_style( 'dashicons' );
 	}
 
-	// public function load_paparser_front_end() {
-	// 	wp_enqueue_script( 'papaparser', 'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.2/papaparse.js', array( 'jquery '));
+	public function csv_handler() {
+		echo 'csv_handler()';
+
+		$json_array = $this->handleRequest();
+
+
+		if (is_null($json_array)) {
+			echo '$data is NULL';
+		}
+		else {
+			echo 'Variable is not NULL';
+		}
+
+		// this is required to terminate immediately and return a proper response
+		wp_die();
+	}
+
+	private function handleRequest() {
+		echo 'handleRequest()';
+
+		$data = $_POST['data'];
+
+		// // transforming data into an array
+		// // stripslashes is needed to remove '\'
+		// // json_decode() will fail if '\' are present
+		// // ex:
+		// //{\"RecordID\":\"2\",\"name\":\"ken\"}
+		// //{"RecordID":"1","name":"francisco"}
+		$json_array = json_decode(stripslashes($data), true);
+
+		return $json_array;
+	}
+
+	private function createProduct($item) {
+
+	}
+
+
+
+	// function handles POST Request
+	// converts json string -> json_array
+	// public function handleRequest() {
+	// 	// $data = $_POST['data'];
+
+	// 	// // transforming data into an array
+	// 	// // stripslashes is needed to remove '\'
+	// 	// // json_decode() will fail if '\' are present
+	// 	// // ex:
+	// 	// //{\"RecordID\":\"2\",\"name\":\"ken\"}
+	// 	// //{"RecordID":"1","name":"francisco"}
+	// 	// $json_array = json_decode(stripslashes($data), true);
+
+	// 	// return $json_array;
+	// 	echo 'hanlde request';
 	// }
 }

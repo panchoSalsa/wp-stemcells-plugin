@@ -36,3 +36,14 @@
 	<br>
 	<input type="file" id="csvmind_post-button" name="upload" value="import">
 </div>
+
+
+<?php
+	// add_action('wp_ajax_csv_handler', 'csv_handler');
+	// function csv_handler() {
+	// 	echo 'hello from csv_handler';
+	// 	// $data = $_POST['data'];
+	// 	// $json_array = json_decode($data, true);
+	// 	// echo $json_array[1]['name'];
+	// }
+?>
