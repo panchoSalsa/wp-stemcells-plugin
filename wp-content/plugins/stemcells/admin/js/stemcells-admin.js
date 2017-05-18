@@ -67,6 +67,7 @@
 		console.log({data: JSON.stringify(data), action : 'csv_handler'});
 		console.log('http://'+window.location.host+'/wp-admin/admin-ajax.php');
 		$.ajax({
+			// this hardcoded url will probably break
 			// url: '/wp-admin/admin-ajax.php',
 			url: 'http://'+window.location.host+'/stemcells/wp-admin/admin-ajax.php',
 			type: 'POST',
