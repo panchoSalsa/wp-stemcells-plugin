@@ -184,6 +184,7 @@ class Stemcells_Admin {
 		wp_set_object_terms( $post_id, 'student', 'product_cat' );
 		wp_set_object_terms( $post_id, 'simple', 'product_type' );
 
+
 		update_post_meta( $post_id, '_visibility', 'visible' );
 		update_post_meta( $post_id, '_stock_status', 'instock');
 		update_post_meta( $post_id, 'total_sales', '0' );
