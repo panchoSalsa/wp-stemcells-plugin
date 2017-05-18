@@ -1,6 +1,0 @@
-{
-  "require": {
-    "solarium/solarium": "3.8.1",
-    "ruflin/elastica": "5.1.0"
-  }
-}
