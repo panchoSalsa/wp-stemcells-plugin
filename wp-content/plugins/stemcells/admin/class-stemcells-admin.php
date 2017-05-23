@@ -121,7 +121,7 @@ class Stemcells_Admin {
 	    // source=https://premium.wpmudev.org/blog/creating-wordpress-admin-pages/?utm_expid=3606929-105.kKHVTz43T_CV513Vo9oSow.0&utm_referrer=https%3A%2F%2Fwww.google.com%2F
 	    // source=https://developer.wordpress.org/reference/functions/add_menu_page/
 
-	    ChromePhp::log('admin_menu()');
+	    //ChromePhp::log('admin_menu()');
 	    add_menu_page( 'stemcells', 'stemcells', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page'), 'dashicons-cart');
 	}
 
@@ -146,10 +146,13 @@ class Stemcells_Admin {
 		}
 		else {
 			echo 'Variable is not NULL';
-			foreach($json_array as $item) {
-				// echo 'Record ID: ' . $item['Record ID'] . ',';
-				$this->createProduct($item);
-			}
+			// here we will iterate through each row to add products
+
+
+			// foreach($json_array as $item) {
+			// // 	// echo 'Record ID: ' . $item['Record ID'] . ',';
+			// 	$this->createProduct($item);
+			// }
 		}
 
 		// this is required to terminate immediately and return a proper response
