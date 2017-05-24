@@ -1,0 +1,305 @@
+/*
+ Theme Name:   Vantage Child
+ Theme URI:    stemcells/vantage-child/
+ Description:  My first child theme, based on Vantage Theme
+ Author:       Francisco & Ken
+ Author URI:   http://danielpataki.com
+ Template:     vantage
+ Version:      1.0.0
+ Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce
+ Text Domain:  vantage-child
+*/
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+a.button {
+    color: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin: 0.67em 0;
+}
+
+dl {
+  margin-bottom: 0;
+}
+
+dd {
+  font-size: 1rem;
+}
+
+dl dd {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+li,p {
+  line-height: 1.4;
+}
+
+.article-h1 {
+  margin-top: 0;
+}
+
+.article-h1 .section-name {
+  font-weight: normal;
+  color: #555;
+}
+
+input[type="file"], input[type="checkbox"], input[type="radio"], select {
+    margin: 0;
+}
+
+.sub-nav dt, .sub-nav dd, .sub-nav li {
+    font-size: .8rem;
+}
+
+.sub-nav dt.current-menu-item a, .sub-nav dd.current-menu-item a, .sub-nav li.current-menu-item a,
+.sub-nav dt.current-page-ancestor a, .sub-nav dd.current-page-ancestor a, .sub-nav li.current-page-ancestor a,
+.sub-nav dt.current-post-type-index a, .sub-nav dd.current-post-type-index a, .sub-nav li.current-post-type-index a {
+  border-radius: 3px;
+  font-weight: normal;
+  background: #008CBA;
+  padding: 0.3rem 1rem;
+  color: #fff;
+}
+
+.top-bar .current-menu-item a, .top-bar li.current-menu-item a, .top-bar li.current-menu-item a,
+.top-bar .current-page-ancestor a, .top-bar li.current-page-ancestor a, .top-bar li.current-page-ancestor a,
+.top-bar .current-post-type-index a, .top-bar li.current-post-type-index a, .top-bar li.current-post-type-index a {
+  background: #008CBA !important;
+  color: white ;
+}
+
+.sub-nav {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.home .sub-nav {
+    padding: 3px;
+}
+
+.demo-source { display : none;}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.4em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+
+.search-results h4 {
+  margin-bottom: 0;
+}
+
+.search-results p {
+  margin-bottom: .5rem;
+}
+
+.search-results article {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+body {
+    line-height: 1.4;
+}
+
+.header {
+  margin-bottom: 26px;
+}
+
+.top-nav {
+  margin-bottom: 1em;
+}
+
+.hdr-logo {
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1.5;
+    color: #444;
+}
+
+.hdr-logo a {
+    color: inherit;
+}
+
+.github-icon {
+    background-image: url(img/GitHub-Mark-64px.png);
+    background-size: 32px 32px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.nav-main {
+      margin: .5em 0;
+/*    border-bottom: 1px solid #bbb;*/
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: .2em 0 .7em 0;
+}
+
+.nav-item {
+    display: inline-block;
+/*    margin: 0 1em;*/
+}
+
+.nav-item:first-child {
+    margin-left: 0;
+}
+
+.nav .current-menu-item a, .nav .current-post-type-index a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.home .wrapper {
+  max-width: 62.5em;
+}
+
+.row {
+  max-width: 88rem;
+}
+
+.wpas-field {
+    margin: 1em 0;
+}
+
+.syntaxhighlighter { 
+  border: 1px solid #ddd;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.demo-source .syntaxhighlighter {
+  margin-top: 2px !important;
+}
+
+.home-body {
+    text-align: center;
+}
+
+.home h1 {
+  font-size: 3em;
+  line-height: 1.2;
+  margin-top: .3em;
+}
+
+.home h2 {
+  font-size: 2.2em;
+}
+
+.side-box {
+  border: 1px solid #eee;
+  padding: 8px;
+}
+
+.side-box h4 {
+  margin-top: 2px;
+}
+
+.side-menu ul.nav-links,
+.side-menu ul.list-posts  {
+  margin: 0 5px;
+  list-style-type: none;
+}
+
+.side-menu ul.nav-links li.current-menu-item > a {
+  font-weight: bold;
+  color: black;
+}
+
+/*.side-menu li ul {
+  display: none;
+}
+
+.side-menu li.current-menu-item ul,
+.side-menu li  {
+  display: block;
+}*/
+
+.article-content li {
+  margin: 0.5em 0;
+}
+
+.list-posts a.current-menu-item {
+  color: black;
+}
+
+tt a {
+    font-size: 1.3em;
+}
+
+dd {
+    margin-left: 20px;
+}
+
+dd, dl {
+    font-family: monospace;
+}
+
+footer {
+    margin: 3em 0 1em;
+    font-size: .7em;
+}
+
+footer .wrapper .inner {
+    border-top: 1px solid #bbb;
+    padding: 1em 0 0;
+}
+
+.demo-source p {
+  margin-bottom: 2px;
+}
+
+.gist-file table {
+  width: 100%;
+}
+
+#wpas-load {
+  text-align: center;
+}
+
+#wpas-loading-img {
+  margin-top: 10px;
+}
+
+#wp-advanced-search .button {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.page-template-template-demo-1-4-ajax #wpas-reset {
+  margin-top: 0;
+}
+
+.page-template-template-demo-1-4-ajax #wpas-submit {
+  margin-bottom: 5px;
+}
+
+textarea.coderaw {
+  background-color: #fafafa;
+  font-size: 16px !important;
+  display: none;
+}
+
+#wpas-results span.type {
+  position: relative;
+  bottom: 1px;
+  font-size: 13px;
+  font-weight: normal;
+}
