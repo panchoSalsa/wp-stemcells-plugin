@@ -15,7 +15,7 @@
 
 	function demo_ajax_search() {
 		$args = array();
-		$args['wp_query'] = array( 'post_type' => array('page', 'post'), 
+		$args['wp_query'] = array('post_type' => array('product'), 
 		                         'orderby' => 'title', 
 		                         'order' => 'ASC' );
 		$args['form'] = array( 'auto_submit' => true );
@@ -28,7 +28,7 @@
 		$args['fields'][] = array( 'type' => 'post_type', 
 		                         'format' => 'checkbox', 
 		                         'label' => 'Search by post type', 
-		                         'values' => array('page' => 'Pages', 'post' => 'Posts') ,
+		                         'values' => array('product' => 'Products') ,
 		                         'default_all' => true );
 		$args['fields'][] = array( 'type' => 'orderby', 
 		                         'format' => 'select', 
@@ -48,8 +48,8 @@
 		$args['fields'][] = array( 'type' => 'posts_per_page', 
 		                         'format' => 'select', 
 		                         'label' => 'Results per page', 
-		                         'values' => array(2=>2, 5=>5, 10=>10), 
-		                         'default' => 10 );
+		                         'values' => array(3=>3, 6=>6, 9=>9),  
+		                         'default' => 6 );
 		$args['fields'][] = array( 'type' => 'reset',
 		                         'class' => 'button',
 		                         'value' => 'Reset' );

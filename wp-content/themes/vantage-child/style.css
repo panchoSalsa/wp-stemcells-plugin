@@ -303,3 +303,45 @@ textarea.coderaw {
   font-size: 13px;
   font-weight: normal;
 }
+
+.products {
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.product {
+  float: left;
+  margin: 0 3.8% 2.992em 0;
+  padding: 0;
+  position: relative;
+  width: 25%;
+
+  margin-bottom: 0px;
+}
+
+/*Product Name*/
+.woocommerce-LoopProduct-link h2 {
+/*  font-size: 1.0em;*/
+  /*responsive font-size when shrinking or expanding screen*/
+  font-size: 1.2vw
+}
+
+.price {
+  display: block;
+  font-weight: 400;
+  margin-bottom: .5em;
+  font-size: .857em;
+}
+
+.woocommerce-pagination {
+  display: none;
+}
+
+/*LOAD MORE RESULTS BUTTON*/
+/*center button*/
+#wpas-load-btn {
+  position: relative;
+  right: 8.5%;
+}
