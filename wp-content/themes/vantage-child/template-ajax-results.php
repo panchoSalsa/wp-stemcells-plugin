@@ -43,6 +43,7 @@
    <?php
    /*  woocommerce pagination  */
    // do_action('woocommerce_after_shop_loop');
+    
    ?>
 
 <?php elseif (!woocommerce_product_subcategories(array('before' => woocommerce_product_loop_start(false), 'after' => woocommerce_product_loop_end(false)))) : ?>

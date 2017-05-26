@@ -311,7 +311,7 @@ textarea.coderaw {
   clear: both;
 }
 
-.product {
+.products .product {
   float: left;
   margin: 0 3.8% 2.992em 0;
   padding: 0;
@@ -333,6 +333,7 @@ textarea.coderaw {
   font-weight: 400;
   margin-bottom: .5em;
   font-size: .857em;
+  color: black !important;
 }
 
 .woocommerce-pagination {
