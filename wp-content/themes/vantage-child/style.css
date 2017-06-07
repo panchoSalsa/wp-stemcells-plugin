@@ -323,10 +323,11 @@ textarea.coderaw {
 
 /*Product Name*/
 .woocommerce-LoopProduct-link h2 {
-/*  font-size: 1.0em;*/
+  /*font-size: 1.0em;*/
   /*responsive font-size when shrinking or expanding screen*/
-  /*font-size: 1.0vw*/
-  font-size: 0.7vw;
+  /*font-size: 1.0vw;*/
+  font-size: 0.8em;
+  /*font-size: 0.7vw;*/
 }
 
 .price {
@@ -346,4 +347,30 @@ textarea.coderaw {
 #wpas-load-btn {
   position: relative;
   right: 8.5%;
+}
+
+
+/* remove the following two rules to remove full-width content
+/*full width maincontent*/
+body.responsive.layout-full #page-wrapper .full-container {
+  max-width: 100%;
+}
+
+.layout-full #page-wrapper .full-container {
+  /*max-width: 1080px;*/
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  position: relative;
+}
+
+
+
+.wpas-checkbox-container label {
+    color: #4d4d4d;
+    cursor: pointer;
+    display: block;
+    font-size: 1.0rem;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 0;
 }

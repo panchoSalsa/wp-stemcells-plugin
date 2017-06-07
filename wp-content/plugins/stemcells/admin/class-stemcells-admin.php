@@ -214,13 +214,21 @@ class Stemcells_Admin {
 
 		// create terms between taxonomies
 
-		// wp_set_object_terms( $post_id, $item['ipsc_clones'], 'ipsc_clones');
 		wp_set_object_terms( $post_id, $item['sex'], 'sex');
 		wp_set_object_terms( $post_id, $item['ethnicity'], 'ethnicity');
 		wp_set_object_terms( $post_id, $item['sample_source'], 'sample_source');
 		wp_set_object_terms( $post_id, $item['apoe'], 'apoe');
-		// wp_set_object_terms( $post_id, $item['current_dx'], 'current_dx');
+		wp_set_object_terms( $post_id, $item['syndrome_biopsy'], 'syndrome_biopsy');
+		wp_set_object_terms( $post_id, $item['trem'], 'trem');
+		wp_set_object_terms( $post_id, $item['current_syndrome'], 'current_syndrome');
+		wp_set_object_terms( $post_id, $item['change_in_syndrome'], 'change_in_syndrome');
 
+
+		// we need to parse $item['current_dx']
+		// and create a term for each [diagnostic]
+		// make a function that creates terms out of every array of [], [], []
+
+		//wp_set_object_terms( $post_id, $item['current_dx'], 'current_dx');
 
 		update_post_meta( $post_id, '_visibility', 'visible' );
 		update_post_meta( $post_id, '_stock_status', 'instock');
@@ -269,7 +277,7 @@ class Stemcells_Admin {
 		$str .= "<p><strong>Sample Source:</strong> " . $item['Sample Source:'] . "</p>";
 		$str .= "<p><strong>iPSC Clones:</strong> " . $item['ipsc_clones'] . "</p>";
 		$str .= "<p><strong>iPSC Karyotype:</strong> " . $item['iPSC Karyotype:  (Please enter the iPSC karyotype)'] . "</p>";
-		$str .="<p><strong>Syndrome:</strong> " . $item['Syndrome at time of biopsy:  (What is the Syndrome at the time of biopsy?)'] . "</p>";
+		$str .="<p><strong>Syndrome:</strong> " . $item['syndrome_biopsy'] . "</p>";
 		$str .= "<p><strong>MCI:</strong> " . $item['Current MCI Category:  (What is the current MCI diagnostic?)'] . "</p>";
 		return $str;
 	}
@@ -279,10 +287,13 @@ class Stemcells_Admin {
 		// header file should contain the name of taxonomies in lowercase and underscore characters
 
 		register_taxonomy('sex', 'product_type');
-		// register_taxonomy('ipsc_clones', 'product_type');
 		register_taxonomy('ethnicity', 'product_type');
 		register_taxonomy('sample_source', 'product_type');
 		register_taxonomy('apoe', 'product_type');
-		// register_taxonomy('current_dx', 'product_type');
+		register_taxonomy('syndrome_biopsy', 'product_type');
+		register_taxonomy('current_dx', 'product_type');
+		register_taxonomy('trem', 'product_type');
+		register_taxonomy('current_syndrome', 'product_type');
+		register_taxonomy('change_in_syndrome', 'product_type');
 	}
 }

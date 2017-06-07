@@ -43,11 +43,6 @@
 					              'taxonomy' => 'sex',
 					              'label' => 'Sex',
 					              'format' => 'checkbox');
-		
-		// $args['fields'][] = array('type' => 'taxonomy',
-		// 			              'taxonomy' => 'ipsc_clones',
-		// 			              'label' => 'iPSC Clones',
-		// 			              'format' => 'checkbox');
 
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'ethnicity',
@@ -60,24 +55,49 @@
 					              'format' => 'checkbox');
 
 		$args['fields'][] = array('type' => 'taxonomy',
-					              'taxonomy' => 'apoe',
-					              'label' => 'Apoe',
+					              'taxonomy' => 'syndrome_biopsy',
+					              'label' => 'Syndrome Biopsy',
 					              'format' => 'checkbox');
 
-		// $args['fields'][] = array('type' => 'taxonomy',
-		// 			              'taxonomy' => 'current_dx',
-		// 			              'label' => 'Current Dx',
-		// 			              'format' => 'checkbox');
+		$args['fields'][] = array('type' => 'taxonomy',
+					              'taxonomy' => 'current_syndrome',
+					              'label' => 'Current Syndrome',
+					              'format' => 'checkbox');
 
-		$args['fields'][] = array( 'type' => 'orderby', 
-		                         'format' => 'select', 
-		                         'label' => 'Order by', 
-		                         'values' => array('title' => 'Title', 'date' => 'Date') );
-		$args['fields'][] = array( 'type' => 'order', 
-		                         'format' => 'radio', 
-		                         'label' => 'Order', 
-		                         'values' => array('ASC' => 'ASC', 'DESC' => 'DESC'), 
-		                         'default' => 'ASC' );
+		$args['fields'][] = array('type' => 'taxonomy',
+					              'taxonomy' => 'change_in_syndrome',
+					              'label' => 'Change in Syndrome',
+					              'format' => 'checkbox');
+
+		$args['fields'][] = array('type' => 'taxonomy',
+					              'taxonomy' => 'current_dx',
+					              'label' => 'Current Diagnostics',
+					              'format' => 'checkbox');
+
+		$args['fields'][] = array('type' => 'taxonomy',
+					              'taxonomy' => 'trem',
+					              'label' => 'TREM',
+					              'format' => 'checkbox');
+
+		$args['fields'][] = array('type' => 'taxonomy',
+					              'taxonomy' => 'apoe',
+					              'label' => 'ApoE',
+					              'format' => 'checkbox');
+
+		// Order By Date or Title
+		// $args['fields'][] = array( 'type' => 'orderby', 
+		//                          'format' => 'select', 
+		//                          'label' => 'Order by', 
+		//                          'values' => array('title' => 'Title', 'date' => 'Date') );
+
+		// Order By Asc or Desc
+		// $args['fields'][] = array( 'type' => 'order', 
+		//                          'format' => 'radio', 
+		//                          'label' => 'Order', 
+		//                          'values' => array('ASC' => 'ASC', 'DESC' => 'DESC'), 
+		//                          'default' => 'ASC' );
+
+		// Request Posts Per Page
 		// $args['fields'][] = array( 'type' => 'posts_per_page', 
 		//                          'format' => 'select', 
 		//                          'label' => 'Results per page', 
