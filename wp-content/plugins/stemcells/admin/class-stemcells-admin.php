@@ -146,17 +146,42 @@ class Stemcells_Admin {
 		}
 		else {
 			echo 'Variable is not NULL';
+
+			// delete previous products
+			$this->deleteProducts();
+
 			// here we will iterate through each row to add products
 
+			foreach($json_array as $item) {
+				$this->createProduct($item);
+			}
 
-			// foreach($json_array as $item) {
-			// // 	// echo 'Record ID: ' . $item['Record ID'] . ',';
-			// 	$this->createProduct($item);
-			// }
 		}
 
 		// this is required to terminate immediately and return a proper response
 		wp_die();
+	}
+
+	private function deleteProducts() {
+
+		// source=https://codex.wordpress.org/Template_Tags/get_posts
+
+		// delete N posts
+		// source=https://developer.wordpress.org/reference/functions/get_posts/
+		$args = array(
+			'post_type' => 'product'
+		);
+
+		// 'numberposts' => -1 to delete every product
+		$defaults = array(
+			'numberposts' => -1
+		);
+
+		$posts_array = get_posts( $args, $defaults );
+
+		foreach($posts_array as $post){
+			wp_delete_post( $post->ID, true );
+		}
 	}
 
 	private function handleRequest() {
@@ -176,16 +201,25 @@ class Stemcells_Admin {
 	}
 
 	private function createProduct($item) {
-		echo 'createProduct()';
+		// echo 'createProduct()';
 
 		// source=https://wordpress.stackexchange.com/questions/137501/how-to-add-product-in-woocommerce-with-php-code
 		$post_id = wp_insert_post( array(
-			'post_title' => $item['name'],
+			// 'post_title' => $item['Record ID'],
+			'post_title' => $this->createTitle($item),
+			'post_content' => $this->createContent($item),
 			'post_status' => 'publish',
 			'post_type' => "product"
 		) );
-		wp_set_object_terms( $post_id, 'student', 'product_cat' );
-		wp_set_object_terms( $post_id, 'simple', 'product_type' );
+
+		// create terms between taxonomies
+
+		// wp_set_object_terms( $post_id, $item['ipsc_clones'], 'ipsc_clones');
+		wp_set_object_terms( $post_id, $item['sex'], 'sex');
+		wp_set_object_terms( $post_id, $item['ethnicity'], 'ethnicity');
+		wp_set_object_terms( $post_id, $item['sample_source'], 'sample_source');
+		wp_set_object_terms( $post_id, $item['apoe'], 'apoe');
+		// wp_set_object_terms( $post_id, $item['current_dx'], 'current_dx');
 
 
 		update_post_meta( $post_id, '_visibility', 'visible' );
@@ -211,7 +245,44 @@ class Stemcells_Admin {
 		update_post_meta( $post_id, '_backorders', 'no' );
 		update_post_meta( $post_id, '_stock', '' );
 
-		echo 'createProduct() exit';
 
+		// adding image to product
+
+		update_post_meta( $post_id, '_product_image_gallery', '');
+		add_post_meta($post_id, '_thumbnail_id', 23);
+
+		// echo 'createProduct() exit';
+	}
+
+	private function createTitle($item) {
+		$str = "";
+		$str .= $item['ipsc_line_name'] . " ";
+		$str .= $item['ipsc_id'] . " ";
+		$str .= $item['clone_id'] . " ";
+		return $str;
+	}
+
+	private function createContent($item) {
+		$str = "";
+		$str .= "<p><strong>Sex:</strong> " . $item['sex'] . "</p>";
+		$str .= "<p><strong>Ethnicity:</strong> " . $item['Ethnicity:  (What is the patient\'s ethnicity?)'] . "</p>";
+		$str .= "<p><strong>Sample Source:</strong> " . $item['Sample Source:'] . "</p>";
+		$str .= "<p><strong>iPSC Clones:</strong> " . $item['ipsc_clones'] . "</p>";
+		$str .= "<p><strong>iPSC Karyotype:</strong> " . $item['iPSC Karyotype:  (Please enter the iPSC karyotype)'] . "</p>";
+		$str .="<p><strong>Syndrome:</strong> " . $item['Syndrome at time of biopsy:  (What is the Syndrome at the time of biopsy?)'] . "</p>";
+		$str .= "<p><strong>MCI:</strong> " . $item['Current MCI Category:  (What is the current MCI diagnostic?)'] . "</p>";
+		return $str;
+	}
+
+	public function register_taxonomies() {
+		// csv import file 
+		// header file should contain the name of taxonomies in lowercase and underscore characters
+
+		register_taxonomy('sex', 'product_type');
+		// register_taxonomy('ipsc_clones', 'product_type');
+		register_taxonomy('ethnicity', 'product_type');
+		register_taxonomy('sample_source', 'product_type');
+		register_taxonomy('apoe', 'product_type');
+		// register_taxonomy('current_dx', 'product_type');
 	}
 }

@@ -325,7 +325,8 @@ textarea.coderaw {
 .woocommerce-LoopProduct-link h2 {
 /*  font-size: 1.0em;*/
   /*responsive font-size when shrinking or expanding screen*/
-  font-size: 1.2vw
+  /*font-size: 1.0vw*/
+  font-size: 0.7vw;
 }
 
 .price {

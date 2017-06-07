@@ -31,6 +31,8 @@
 	$(document).ready(function(){
 		$('#csvmind_post-button').change(function(e) {
 
+			$('#info').css('visibility', 'visible');
+
 			// source=http://www.joyofdata.de/blog/parsing-local-csv-file-with-javascript-papa-parse/
 			// parse uploaded file content
 			processCSV(e);
@@ -78,7 +80,8 @@
 			// [{"Record ID":"92",...}, {},... {}]
 			data: {data: JSON.stringify(data), action : 'csv_handler'},
 			success: function(result){
-				console.log('ajaxCall() success');
+				//console.log('ajaxCall() success');
+				$('#info').html('csv import complete');
 
 				// maybe redirect to shop or output any error messages ...
 				console.log(result);

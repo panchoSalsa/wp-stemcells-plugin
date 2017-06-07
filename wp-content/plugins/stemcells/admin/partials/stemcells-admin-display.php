@@ -35,6 +35,8 @@
 	<span>Select a CSV file to upload</span>
 	<br>
 	<input type="file" id="csvmind_post-button" name="upload" value="import">
+	<br>
+	<h3 id="info">importing csv ...</h3>
 </div>
 
 

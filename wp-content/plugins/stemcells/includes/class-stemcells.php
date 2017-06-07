@@ -163,6 +163,8 @@ class Stemcells {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_admin, 'load_dashicons_front_end' );
 
 		$this->loader->add_action( 'wp_ajax_csv_handler', $plugin_admin, 'csv_handler' );
+
+		$this->loader->add_action( 'init', $plugin_admin, 'register_taxonomies' );
 	}
 
 	/**

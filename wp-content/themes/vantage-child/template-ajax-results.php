@@ -4,24 +4,12 @@
 * This file should be created in the root of your theme directory
 * See http://wpadvancedsearch.com to learn more 
 */
-
-// if ( have_posts() ) :             
-//    while ( have_posts() ) : the_post(); 
-//    $post_type = get_post_type_object($post->post_type);
    ?>
-<!--       <article>
-         <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-         <p class="info"><strong>Post Type:</strong> <?php echo $post_type->labels->singular_name; ?> &nbsp;&nbsp; <strong>Date added:</strong> <?php the_time('F j, Y'); ?></p>
-         <?php the_excerpt(); ?>
-      </article> -->
 
 <?php 
-//    endwhile; 
-// else :
-//    echo '<p>Sorry, no results matched your search.</p>';
-// endif; 
-
-// wp_reset_query();
+   // source=http://wpadvancedsearch.com/docs/methods/
+   // get product count
+   echo "<h3>" . $wp_query->found_posts . " results found</h3>" 
 ?>
 
 
@@ -35,6 +23,7 @@
    <ul class = "products" >
        <?php while (have_posts()) : the_post(); ?>
 
+
            <?php wc_get_template_part('content', 'product'); ?>
 
        <?php endwhile; // end of the loop.   ?>
@@ -43,7 +32,6 @@
    <?php
    /*  woocommerce pagination  */
    // do_action('woocommerce_after_shop_loop');
-    
    ?>
 
 <?php elseif (!woocommerce_product_subcategories(array('before' => woocommerce_product_loop_start(false), 'after' => woocommerce_product_loop_end(false)))) : ?>
