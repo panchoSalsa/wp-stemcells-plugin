@@ -243,7 +243,7 @@ class Stemcells_Admin {
 		update_post_meta( $post_id, '_length', '' );
 		update_post_meta( $post_id, '_width', '' );
 		update_post_meta( $post_id, '_height', '' );
-		update_post_meta( $post_id, '_sku', 'test03' );
+		update_post_meta( $post_id, '_sku', $this->createSKU($item) );
 		update_post_meta( $post_id, '_product_attributes', array() );
 		update_post_meta( $post_id, '_sale_price_dates_from', '' );
 		update_post_meta( $post_id, '_sale_price_dates_to', '' );
@@ -279,6 +279,11 @@ class Stemcells_Admin {
 		$str .= "<p><strong>iPSC Karyotype:</strong> " . $item['iPSC Karyotype:  (Please enter the iPSC karyotype)'] . "</p>";
 		$str .="<p><strong>Syndrome:</strong> " . $item['syndrome_biopsy'] . "</p>";
 		$str .= "<p><strong>MCI:</strong> " . $item['Current MCI Category:  (What is the current MCI diagnostic?)'] . "</p>";
+		return $str;
+	}
+
+	private function createSKU($item) {
+		$str = $item['ipsc_line_name'] . " " . $item['ipsc_id'] . " " . $item['clone_id'];
 		return $str;
 	}
 
