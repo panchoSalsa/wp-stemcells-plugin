@@ -280,12 +280,17 @@ class Stemcells_Admin {
 	private function createContent($item) {
 		$str = "";
 		$str .= "<p><strong>Sex:</strong> " . $item['sex'] . "</p>";
-		$str .= "<p><strong>Ethnicity:</strong> " . $item['Ethnicity:  (What is the patient\'s ethnicity?)'] . "</p>";
-		$str .= "<p><strong>Sample Source:</strong> " . $item['Sample Source:'] . "</p>";
+		$str .= "<p><strong>Ethnicity:</strong> " . $item['ethnicity'] . "</p>";
+		$str .= "<p><strong>Sample Source:</strong> " . $item['sample_source'] . "</p>";
 		$str .= "<p><strong>iPSC Clones:</strong> " . $item['ipsc_clones'] . "</p>";
-		$str .= "<p><strong>iPSC Karyotype:</strong> " . $item['iPSC Karyotype:  (Please enter the iPSC karyotype)'] . "</p>";
+		$str .= "<p><strong>iPSC Karyotype:</strong> " . $item['ipsc_karyotype'] . "</p>";
 		$str .="<p><strong>Syndrome:</strong> " . $item['syndrome_biopsy'] . "</p>";
-		$str .= "<p><strong>MCI:</strong> " . $item['Current MCI Category:  (What is the current MCI diagnostic?)'] . "</p>";
+		$str .= "<p><strong>MCI:</strong> " . $item['mci'] . "</p>";
+		$str .= "<p><strong>Initial MMSE:</strong> " . $item['initial_mmse'] . "</p>";
+		$str .= "<p><strong>Initial CDR:</strong> " . $item['initial_cdr'] . "</p>";
+		$str .= "<p><strong>Current MMSE:</strong> " . $item['current_mmse'] . "</p>";
+		$str .= "<p><strong>Current CDR:</strong> " . $item['current_cdr'] . "</p>";
+
 		return $str;
 	}
 
@@ -300,6 +305,15 @@ class Stemcells_Admin {
 	}
 
 	private function updateProduct($post_id, $item) {
+
+		// update the content 
+		$my_post = array(
+			'ID'           => $post_id,
+			'post_content' => $this->createContent($item),
+		);
+
+		wp_update_post( $my_post );
+
 		$this->modifyProduct($post_id, $item);
 	}
 
