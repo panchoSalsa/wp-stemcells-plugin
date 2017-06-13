@@ -284,7 +284,7 @@ class Stemcells_Admin {
 		$str .= "<p><strong>Sample Source:</strong> " . $item['sample_source'] . "</p>";
 		$str .= "<p><strong>iPSC Clones:</strong> " . $item['ipsc_clones'] . "</p>";
 		$str .= "<p><strong>iPSC Karyotype:</strong> " . $item['ipsc_karyotype'] . "</p>";
-		$str .="<p><strong>Syndrome:</strong> " . $item['syndrome_biopsy'] . "</p>";
+		$str .= "<p><strong>Syndrome:</strong> " . $item['syndrome_biopsy'] . "</p>";
 		$str .= "<p><strong>MCI:</strong> " . $item['mci'] . "</p>";
 		$str .= "<p><strong>Initial MMSE:</strong> " . $item['initial_mmse'] . "</p>";
 		$str .= "<p><strong>Initial CDR:</strong> " . $item['initial_cdr'] . "</p>";
