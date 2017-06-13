@@ -408,3 +408,18 @@ a.cart-contents {
     z-index: 99;
     left: 87%;
 }
+
+/* hide search icon */
+#search-icon {
+  display: none;
+}
+
+ul#top-menu {
+    margin: 0 auto;
+    width: 425px; /*the menu width*/
+}
+
+/* post date */
+header.entry-header {
+    display: none;
+}

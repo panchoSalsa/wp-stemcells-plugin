@@ -44,6 +44,21 @@
 	    return $fragments;
 	}
 
+
+	// source=https://nicola.blog/2015/07/20/change-the-return-to-shop-button-url-in-the-cart-page/
+	/**
+	 * Changes the redirect URL for the Return To Shop button in the cart.
+	 *
+	 * @return string
+	 */
+	function wc_empty_cart_redirect_url() {
+		// $page = get_page_by_title( 'wp-advanced search' );
+		// ChromePhp::log(get_post_permalink($page->ID));
+
+		// need to fix this !!!
+		return 'http://localhost:8888/stemcells/wp-advanced-search/';
+	}
+
 	function demo_ajax_search() {
 		$args = array();
 		$args['wp_query'] = array('post_type' => array('product'), 
@@ -65,6 +80,9 @@
 		$args['fields'][] = array( 'type' => 'search', 
 		                         'placeholder' => 'Enter search terms' );
 
+		// sort facet fields alphabetically using 'term_args'
+		// using 'DESC' because I want [Not Applicable] to be the last field
+		// source=http://wpadvancedsearch.com/param/term_args/
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'sex',
 					              'label' => 'Sex',
@@ -197,4 +215,8 @@
 	// shopping cart display
 	// source=https://isabelcastillo.com/woocommerce-cart-icon-count-theme-header
 	add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment');
+
+	// change return to shop link
+	// source=https://nicola.blog/2015/07/20/change-the-return-to-shop-button-url-in-the-cart-page/
+	add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
 ?>
