@@ -229,16 +229,12 @@ class Stemcells_Admin {
 	private function modifyProduct($post_id, $item) {
 
 		// create terms between taxonomies
+		$taxonomies = array('sex', 'ethnicity', 'sample_source', 'apoe',
+		 'syndrome_biopsy', 'trem', 'current_syndrome', 'change_in_syndrome');
 
-		wp_set_object_terms( $post_id, $item['sex'], 'sex');
-		wp_set_object_terms( $post_id, $item['ethnicity'], 'ethnicity');
-		wp_set_object_terms( $post_id, $item['sample_source'], 'sample_source');
-		wp_set_object_terms( $post_id, $item['apoe'], 'apoe');
-		wp_set_object_terms( $post_id, $item['syndrome_biopsy'], 'syndrome_biopsy');
-		wp_set_object_terms( $post_id, $item['trem'], 'trem');
-		wp_set_object_terms( $post_id, $item['current_syndrome'], 'current_syndrome');
-		wp_set_object_terms( $post_id, $item['change_in_syndrome'], 'change_in_syndrome');
-
+		foreach($taxonomies as $taxonomy){
+			$this->setTerms($post_id, $item, $taxonomy);
+		}
 
 		// we need to parse $item['current_dx']
 		// and create a term for each [diagnostic]
@@ -277,20 +273,30 @@ class Stemcells_Admin {
 
 	}
 
+	private function setTerms($post_id, $item, $taxonomy) {
+		$term = $item[$taxonomy];
+		// if csv field blank, set term to 'n/a'
+		if (empty($term)) {
+			$term = 'n/a';
+		}
+
+		wp_set_object_terms( $post_id, $term, $taxonomy);
+
+	}
+
 	private function createContent($item) {
 		$str = "";
-		$str .= "<p><strong>Sex:</strong> " . $item['sex'] . "</p>";
-		$str .= "<p><strong>Ethnicity:</strong> " . $item['ethnicity'] . "</p>";
-		$str .= "<p><strong>Sample Source:</strong> " . $item['sample_source'] . "</p>";
-		$str .= "<p><strong>iPSC Clones:</strong> " . $item['ipsc_clones'] . "</p>";
-		$str .= "<p><strong>iPSC Karyotype:</strong> " . $item['ipsc_karyotype'] . "</p>";
-		$str .= "<p><strong>Syndrome:</strong> " . $item['syndrome_biopsy'] . "</p>";
-		$str .= "<p><strong>MCI:</strong> " . $item['mci'] . "</p>";
-		$str .= "<p><strong>Initial MMSE:</strong> " . $item['initial_mmse'] . "</p>";
-		$str .= "<p><strong>Initial CDR:</strong> " . $item['initial_cdr'] . "</p>";
-		$str .= "<p><strong>Current MMSE:</strong> " . $item['current_mmse'] . "</p>";
-		$str .= "<p><strong>Current CDR:</strong> " . $item['current_cdr'] . "</p>";
-
+		$str .= "<p><strong>Sex:</strong> " . (empty($item['sex']) ? 'n/a' : $item['sex']) . "</p>";
+		$str .= "<p><strong>Ethnicity:</strong> " . (empty($item['sex']) ? 'n/a' : $item['ethnicity']) . "</p>";
+		$str .= "<p><strong>Sample Source:</strong> " . (empty($item['sample_source']) ? 'n/a' : $item['sample_source']) . "</p>";
+		$str .= "<p><strong>iPSC Clones:</strong> " . (empty($item['ipsc_clones']) ? 'n/a' : $item['ipsc_clones']) . "</p>";
+		$str .= "<p><strong>iPSC Karyotype:</strong> " . (empty($item['ipsc_karyotype']) ? 'n/a' : $item['ipsc_karyotype']) . "</p>";
+		$str .= "<p><strong>Syndrome:</strong> " . (empty($item['syndrome_biopsy']) ? 'n/a' : $item['syndrome_biopsy']) . "</p>";
+		$str .= "<p><strong>MCI:</strong> " . (empty($item['mci']) ? 'n/a' : $item['mci']) . "</p>";
+		$str .= "<p><strong>Initial MMSE:</strong> " . (empty($item['initial_mmse']) ? 'n/a' : $item['initial_mmse']) . "</p>";
+		$str .= "<p><strong>Initial CDR:</strong> " . (empty($item['initial_cdr']) ? 'n/a' : $item['initial_cdr']) . "</p>";
+		$str .= "<p><strong>Current MMSE:</strong> " . (empty($item['current_mmse']) ? 'n/a' : $item['current_mmse']) . "</p>";
+		$str .= "<p><strong>Current CDR:</strong> " . (empty($item['current_cdr']) ? 'n/a' : $item['current_cdr']) . "</p>";
 		return $str;
 	}
 
