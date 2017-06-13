@@ -376,7 +376,9 @@ body.responsive.layout-full #page-wrapper .full-container {
 }
 
 
-/* WooCommerce’s native shopping cart icon */
+/* WooCommerce’s native shopping cart icon
+  source=https://isabelcastillo.com/woocommerce-cart-icon-count-theme-header
+ */
 .cart-contents:before {
     font-family:WooCommerce;
     content: "\e01d";
@@ -399,4 +401,10 @@ body.responsive.layout-full #page-wrapper .full-container {
     line-height: 1;
     font-family: Arial, Helvetica, sans-serif;
     vertical-align: top;
+}
+
+a.cart-contents {
+    position: fixed;
+    z-index: 99;
+    left: 87%;
 }

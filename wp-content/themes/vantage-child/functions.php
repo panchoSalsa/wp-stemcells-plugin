@@ -158,6 +158,7 @@
 
 	add_action( 'init', 'demo_ajax_search' );
 
-
+	// shopping cart display
+	// source=https://isabelcastillo.com/woocommerce-cart-icon-count-theme-header
 	add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment');
 ?>
