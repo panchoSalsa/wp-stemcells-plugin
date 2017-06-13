@@ -145,15 +145,27 @@ class Stemcells_Admin {
 			echo '$data is NULL';
 		}
 		else {
-			echo 'Variable is not NULL';
+			echo '$json_array is not NULL';
 
 			// delete previous products
-			$this->deleteProducts();
+			//$this->deleteProducts();
 
-			// here we will iterate through each row to add products
+
+			// here we will iterate through each row to add or update products
 
 			foreach($json_array as $item) {
-				$this->createProduct($item);
+
+				// get a product id by sku
+				$post_id = $this->getProductID($item);
+
+				// check if the product exists
+				if ($post_id === 0) {
+					// create a new product
+					$this->createProduct($item);
+				} else {
+					// update the product
+					$this->updateProduct($post_id, $item);
+				}
 			}
 
 		}
@@ -201,16 +213,20 @@ class Stemcells_Admin {
 	}
 
 	private function createProduct($item) {
-		// echo 'createProduct()';
 
 		// source=https://wordpress.stackexchange.com/questions/137501/how-to-add-product-in-woocommerce-with-php-code
 		$post_id = wp_insert_post( array(
-			// 'post_title' => $item['Record ID'],
-			'post_title' => $this->createTitle($item),
+			//'post_title' => $this->createTitle($item),
+			'post_title' => $this->createSKU($item),
 			'post_content' => $this->createContent($item),
 			'post_status' => 'publish',
 			'post_type' => "product"
 		) );
+
+		$this->modifyProduct($post_id, $item);
+	}
+
+	private function modifyProduct($post_id, $item) {
 
 		// create terms between taxonomies
 
@@ -235,7 +251,7 @@ class Stemcells_Admin {
 		update_post_meta( $post_id, 'total_sales', '0' );
 		update_post_meta( $post_id, '_downloadable', 'no' );
 		update_post_meta( $post_id, '_virtual', 'yes' );
-		update_post_meta( $post_id, '_regular_price', '$2.99' );
+		update_post_meta( $post_id, '_regular_price', '$0.00' );
 		update_post_meta( $post_id, '_sale_price', '' );
 		update_post_meta( $post_id, '_purchase_note', '' );
 		update_post_meta( $post_id, '_featured', 'no' );
@@ -247,7 +263,7 @@ class Stemcells_Admin {
 		update_post_meta( $post_id, '_product_attributes', array() );
 		update_post_meta( $post_id, '_sale_price_dates_from', '' );
 		update_post_meta( $post_id, '_sale_price_dates_to', '' );
-		update_post_meta( $post_id, '_price', '$2.99' );
+		update_post_meta( $post_id, '_price', '$0.00' );
 		update_post_meta( $post_id, '_sold_individually', '' );
 		update_post_meta( $post_id, '_manage_stock', 'no' );
 		update_post_meta( $post_id, '_backorders', 'no' );
@@ -259,15 +275,6 @@ class Stemcells_Admin {
 		update_post_meta( $post_id, '_product_image_gallery', '');
 		add_post_meta($post_id, '_thumbnail_id', 23);
 
-		// echo 'createProduct() exit';
-	}
-
-	private function createTitle($item) {
-		$str = "";
-		$str .= $item['ipsc_line_name'] . " ";
-		$str .= $item['ipsc_id'] . " ";
-		$str .= $item['clone_id'] . " ";
-		return $str;
 	}
 
 	private function createContent($item) {
@@ -285,6 +292,15 @@ class Stemcells_Admin {
 	private function createSKU($item) {
 		$str = $item['ipsc_line_name'] . " " . $item['ipsc_id'] . " " . $item['clone_id'];
 		return $str;
+	}
+
+	private function getProductID($item) {
+		// source=https://stackoverflow.com/questions/23692540/woocommerce-get-product-id-using-product-sku
+		return wc_get_product_id_by_sku( $this->createSKU($item) );
+	}
+
+	private function updateProduct($post_id, $item) {
+		$this->modifyProduct($post_id, $item);
 	}
 
 	public function register_taxonomies() {
