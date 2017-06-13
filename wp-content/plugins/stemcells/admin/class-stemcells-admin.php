@@ -275,9 +275,10 @@ class Stemcells_Admin {
 
 	private function setTerms($post_id, $item, $taxonomy) {
 		$term = $item[$taxonomy];
-		// if csv field blank, set term to 'n/a'
+		// if csv field blank, set term to '[Not Applicable]'
 		if (empty($term)) {
-			$term = 'n/a';
+			//$term = '[Not Applicable]';
+			$term = '[Not Applicable]';
 		}
 
 		wp_set_object_terms( $post_id, $term, $taxonomy);
@@ -286,17 +287,17 @@ class Stemcells_Admin {
 
 	private function createContent($item) {
 		$str = "";
-		$str .= "<p><strong>Sex:</strong> " . (empty($item['sex']) ? 'n/a' : $item['sex']) . "</p>";
-		$str .= "<p><strong>Ethnicity:</strong> " . (empty($item['sex']) ? 'n/a' : $item['ethnicity']) . "</p>";
-		$str .= "<p><strong>Sample Source:</strong> " . (empty($item['sample_source']) ? 'n/a' : $item['sample_source']) . "</p>";
-		$str .= "<p><strong>iPSC Clones:</strong> " . (empty($item['ipsc_clones']) ? 'n/a' : $item['ipsc_clones']) . "</p>";
-		$str .= "<p><strong>iPSC Karyotype:</strong> " . (empty($item['ipsc_karyotype']) ? 'n/a' : $item['ipsc_karyotype']) . "</p>";
-		$str .= "<p><strong>Syndrome:</strong> " . (empty($item['syndrome_biopsy']) ? 'n/a' : $item['syndrome_biopsy']) . "</p>";
-		$str .= "<p><strong>MCI:</strong> " . (empty($item['mci']) ? 'n/a' : $item['mci']) . "</p>";
-		$str .= "<p><strong>Initial MMSE:</strong> " . (empty($item['initial_mmse']) ? 'n/a' : $item['initial_mmse']) . "</p>";
-		$str .= "<p><strong>Initial CDR:</strong> " . (empty($item['initial_cdr']) ? 'n/a' : $item['initial_cdr']) . "</p>";
-		$str .= "<p><strong>Current MMSE:</strong> " . (empty($item['current_mmse']) ? 'n/a' : $item['current_mmse']) . "</p>";
-		$str .= "<p><strong>Current CDR:</strong> " . (empty($item['current_cdr']) ? 'n/a' : $item['current_cdr']) . "</p>";
+		$str .= "<p><strong>Sex:</strong> " . (empty($item['sex']) ? '[Not Applicable]' : $item['sex']) . "</p>";
+		$str .= "<p><strong>Ethnicity:</strong> " . (empty($item['sex']) ? '[Not Applicable]' : $item['ethnicity']) . "</p>";
+		$str .= "<p><strong>Sample Source:</strong> " . (empty($item['sample_source']) ? '[Not Applicable]' : $item['sample_source']) . "</p>";
+		$str .= "<p><strong>iPSC Clones:</strong> " . (empty($item['ipsc_clones']) ? '[Not Applicable]' : $item['ipsc_clones']) . "</p>";
+		$str .= "<p><strong>iPSC Karyotype:</strong> " . (empty($item['ipsc_karyotype']) ? '[Not Applicable]' : $item['ipsc_karyotype']) . "</p>";
+		$str .= "<p><strong>Syndrome:</strong> " . (empty($item['syndrome_biopsy']) ? '[Not Applicable]' : $item['syndrome_biopsy']) . "</p>";
+		$str .= "<p><strong>MCI:</strong> " . (empty($item['mci']) ? '[Not Applicable]' : $item['mci']) . "</p>";
+		$str .= "<p><strong>Initial MMSE:</strong> " . (empty($item['initial_mmse']) ? '[Not Applicable]' : $item['initial_mmse']) . "</p>";
+		$str .= "<p><strong>Initial CDR:</strong> " . (empty($item['initial_cdr']) ? '[Not Applicable]' : $item['initial_cdr']) . "</p>";
+		$str .= "<p><strong>Current MMSE:</strong> " . (empty($item['current_mmse']) ? '[Not Applicable]' : $item['current_mmse']) . "</p>";
+		$str .= "<p><strong>Current CDR:</strong> " . (empty($item['current_cdr']) ? '[Not Applicable]' : $item['current_cdr']) . "</p>";
 		return $str;
 	}
 

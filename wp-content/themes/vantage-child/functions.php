@@ -69,55 +69,91 @@
 					              'taxonomy' => 'sex',
 					              'label' => 'Sex',
 					              'operator' => 'IN',
-					              'format' => 'checkbox');
+					              'format' => 'checkbox',
+					              'term_args' => array('hide_empty' => true, 
+                                               'orderby' => 'title', 
+                                               'order' => 'DESC')
+					              );
 
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'ethnicity',
 					              'label' => 'Ethnicity',
 					              'operator' => 'IN',
-					              'format' => 'checkbox');
+					              'format' => 'checkbox',
+					              'term_args' => array('hide_empty' => true, 
+                                               'orderby' => 'title', 
+                                               'order' => 'DESC')
+					              );
 
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'sample_source',
 					              'label' => 'Sample Source',
 					              'operator' => 'IN',
-					              'format' => 'checkbox');
+					              'format' => 'checkbox',
+					              'term_args' => array('hide_empty' => true, 
+                                               'orderby' => 'title', 
+                                               'order' => 'DESC')
+					              );
 
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'syndrome_biopsy',
 					              'label' => 'Syndrome Biopsy',
 					              'operator' => 'IN',
-					              'format' => 'checkbox');
+					              'format' => 'checkbox',
+					              'term_args' => array('hide_empty' => true, 
+                                               'orderby' => 'title', 
+                                               'order' => 'DESC')
+					              );
 
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'current_syndrome',
 					              'label' => 'Current Syndrome',
 					              'operator' => 'IN',
-					              'format' => 'checkbox');
+					              'format' => 'checkbox',
+					              'term_args' => array('hide_empty' => true, 
+                                               'orderby' => 'title', 
+                                               'order' => 'DESC')
+					              );
 
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'change_in_syndrome',
 					              'label' => 'Change in Syndrome',
 					              'operator' => 'IN',
-					              'format' => 'checkbox');
+					              'format' => 'checkbox',
+					              'term_args' => array('hide_empty' => true, 
+                                               'orderby' => 'title', 
+                                               'order' => 'DESC')
+					              );
 
-		$args['fields'][] = array('type' => 'taxonomy',
-					              'taxonomy' => 'current_dx',
-					              'label' => 'Current Diagnostics',
-					              'operator' => 'IN',
-					              'format' => 'checkbox');
+		// $args['fields'][] = array('type' => 'taxonomy',
+		// 			              'taxonomy' => 'current_dx',
+		// 			              'label' => 'Current Diagnostics',
+		// 			              'operator' => 'IN',
+		// 			              'format' => 'checkbox',
+		// 			              'term_args' => array('hide_empty' => true, 
+  //                                              'orderby' => 'title', 
+  //                                              'order' => 'DESC')
+		// 			              );
 
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'trem',
 					              'label' => 'TREM',
 					              'operator' => 'IN',
-					              'format' => 'checkbox');
+					              'format' => 'checkbox',
+					              'term_args' => array('hide_empty' => true, 
+                                               'orderby' => 'title', 
+                                               'order' => 'DESC')
+					              );
 
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'apoe',
 					              'label' => 'ApoE',
 					              'operator' => 'IN',
-					              'format' => 'checkbox');
+					              'format' => 'checkbox',
+					              'term_args' => array('hide_empty' => true, 
+                                               'orderby' => 'title', 
+                                               'order' => 'DESC')
+					              );
 
 		// Order By Date or Title
 		// $args['fields'][] = array( 'type' => 'orderby', 
