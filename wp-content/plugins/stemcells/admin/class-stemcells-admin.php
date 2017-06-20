@@ -135,6 +135,43 @@ class Stemcells_Admin {
 		wp_enqueue_style( 'dashicons' );
 	}
 
+	public function redcap_handler() {
+		echo "inside php redcap_handler";
+
+		echo $this->redcapAPICall();
+
+
+
+		// this is required to terminate immediately and return a proper response
+		// or else it appends a 0 to your returned data
+		wp_die();
+	}
+
+	private function redcapAPICall() {
+		$data = array(
+		    'token' => 'FF577F4C0A16135877E633F4CDD07139',
+		    'content' => 'project',
+		    'format' => 'csv',
+		    'returnFormat' => 'csv'
+			);
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, 'https://dmsc.mind.uci.edu/redcap/api/');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_VERBOSE, 0);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+		curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_FRESH_CONNECT, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data, '', '&'));
+		$output = curl_exec($ch);
+		//print $output;
+		curl_close($ch);
+		return $output;
+	}
+
 	public function csv_handler() {
 		echo 'csv_handler()';
 

@@ -9,12 +9,12 @@
 	$search = new WP_Advanced_Search('myform');
 ?>
 
-<div class="row search-section">
-   <div id="sidebar" class="large-3 columns">
+<div class="row search-section scrollable-container">
+   <div id="sidebar" class="large-3 columns scrollable-section">
       <?php $search->the_form(); ?>
    </div>
 
-   <div class="search-results large-9 columns">
+   <div class="search-results large-9 columns scrollable-section">
    		 <?php 
    		 	//$wp_query = $search->query();
    		 	// source=https://stackoverflow.com/questions/3034530/php-print-all-properties-of-an-object

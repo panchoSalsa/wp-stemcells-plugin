@@ -434,3 +434,30 @@ a.added_to_cart.wc-forward {
 img.attachment-shop_catalog.size-shop_catalog.wp-post-image {
     display: none;
 }
+
+/* 
+scrollable sections
+source=https://benfrain.com/independent-scrolling-panels-body-scroll-using-just-css/
+*/
+
+.scrollable-container {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    margin-top: -100px;
+    padding-top: 100px;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+
+.scrollable-section {
+    overflow: auto;
+    height: auto;
+    padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+
+.scrollable-section::-webkit-scrollbar{display:none;}

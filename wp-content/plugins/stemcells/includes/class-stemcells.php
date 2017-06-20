@@ -164,6 +164,8 @@ class Stemcells {
 
 		$this->loader->add_action( 'wp_ajax_csv_handler', $plugin_admin, 'csv_handler' );
 
+		$this->loader->add_action( 'wp_ajax_redcap_handler', $plugin_admin, 'redcap_handler' );
+
 		$this->loader->add_action( 'init', $plugin_admin, 'register_taxonomies' );
 	}
 
