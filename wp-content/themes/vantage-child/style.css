@@ -423,3 +423,14 @@ ul#top-menu {
 header.entry-header {
     display: none;
 }
+
+/* hide View Cart when clickin on Add to Cart */
+a.added_to_cart.wc-forward {
+    display: none;
+}
+
+
+/* hide images */
+img.attachment-shop_catalog.size-shop_catalog.wp-post-image {
+    display: none;
+}

@@ -226,5 +226,5 @@
 
 	//Removes billing from checkout
 	//source=https://gist.github.com/BFTrick/7873168
-	//add_filter(	'woocommerce_checkout_fields', 'remove_checkout_fields');
+	add_filter(	'woocommerce_checkout_fields', 'remove_checkout_fields');
 ?>
