@@ -147,9 +147,6 @@ class Stemcells_Admin {
 		else {
 			echo '$json_array is not NULL';
 
-			// delete previous products
-			//$this->deleteProducts();
-
 
 			// here we will iterate through each row to add or update products
 
@@ -236,6 +233,9 @@ class Stemcells_Admin {
 			$this->setTerms($post_id, $item, $taxonomy);
 		}
 
+		// handle current_cdx terms separately
+		$this->setDxTerms($post_id, $item);
+
 		// we need to parse $item['current_dx']
 		// and create a term for each [diagnostic]
 		// make a function that creates terms out of every array of [], [], []
@@ -283,6 +283,17 @@ class Stemcells_Admin {
 
 		wp_set_object_terms( $post_id, $term, $taxonomy);
 
+	}
+
+	private function setDxTerms($post_id, $item) {
+		$regex = "(\[\w*\])";
+		$matches = [];
+		$dxTerms = [];
+		preg_match_all($regex, $item['current_dx'], $matches, PREG_SET_ORDER);
+		for($i = 0; $i < sizeOf($matches); $i++){
+			$dxTerms[$i] = $matches[$i][0];
+		}
+		wp_set_object_terms($post_id, $dxTerms, 'current_dx');
 	}
 
 	private function createContent($item) {

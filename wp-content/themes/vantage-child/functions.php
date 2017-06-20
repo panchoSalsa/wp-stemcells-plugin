@@ -59,6 +59,29 @@
 		return 'http://localhost:8888/stemcells/wp-advanced-search/';
 	}
 
+
+	//Removes billing from checkout
+	//source=https://gist.github.com/BFTrick/7873168
+	function remove_checkout_fields( $fields ){
+	    unset($fields['billing']['billing_first_name']);
+	    unset($fields['billing']['billing_last_name']);
+	    unset($fields['billing']['billing_company']);
+	    unset($fields['billing']['billing_address_1']);
+	    unset($fields['billing']['billing_address_2']);
+	    unset($fields['billing']['billing_city']);
+	    unset($fields['billing']['billing_postcode']);
+	    unset($fields['billing']['billing_country']);
+	    unset($fields['billing']['billing_state']);
+	    unset($fields['billing']['billing_phone']);
+	    unset($fields['billing']['billing_address_2']);
+	    unset($fields['billing']['billing_postcode']);
+	    unset($fields['billing']['billing_company']);
+	    unset($fields['billing']['billing_last_name']);
+	    unset($fields['billing']['billing_city']);
+	    $fields['billing']['billing_email']['class'] = array('form-row','validate-required', 'validate-email', 'woocommerce-validated');
+	    return $fields;
+	}
+
 	function demo_ajax_search() {
 		$args = array();
 		$args['wp_query'] = array('post_type' => array('product'), 
@@ -143,15 +166,15 @@
                                                'order' => 'DESC')
 					              );
 
-		// $args['fields'][] = array('type' => 'taxonomy',
-		// 			              'taxonomy' => 'current_dx',
-		// 			              'label' => 'Current Diagnostics',
-		// 			              'operator' => 'IN',
-		// 			              'format' => 'checkbox',
-		// 			              'term_args' => array('hide_empty' => true, 
-  //                                              'orderby' => 'title', 
-  //                                              'order' => 'DESC')
-		// 			              );
+		$args['fields'][] = array('type' => 'taxonomy',
+					              'taxonomy' => 'current_dx',
+					              'label' => 'Current Diagnostics',
+					              'operator' => 'IN',
+					              'format' => 'checkbox',
+					              'term_args' => array('hide_empty' => true, 
+                                               'orderby' => 'title', 
+                                               'order' => 'DESC')
+					              );
 
 		$args['fields'][] = array('type' => 'taxonomy',
 					              'taxonomy' => 'trem',
@@ -173,25 +196,6 @@
                                                'order' => 'DESC')
 					              );
 
-		// Order By Date or Title
-		// $args['fields'][] = array( 'type' => 'orderby', 
-		//                          'format' => 'select', 
-		//                          'label' => 'Order by', 
-		//                          'values' => array('title' => 'Title', 'date' => 'Date') );
-
-		// Order By Asc or Desc
-		// $args['fields'][] = array( 'type' => 'order', 
-		//                          'format' => 'radio', 
-		//                          'label' => 'Order', 
-		//                          'values' => array('ASC' => 'ASC', 'DESC' => 'DESC'), 
-		//                          'default' => 'ASC' );
-
-		// Request Posts Per Page
-		// $args['fields'][] = array( 'type' => 'posts_per_page', 
-		//                          'format' => 'select', 
-		//                          'label' => 'Results per page', 
-		//                          'values' => array(3=>3, 6=>6, 9=>9),  
-		//                          'default' => -1 );
 		$args['fields'][] = array( 'type' => 'reset',
 		                         'class' => 'button',
 		                         'value' => 'Reset' );
@@ -219,4 +223,8 @@
 	// change return to shop link
 	// source=https://nicola.blog/2015/07/20/change-the-return-to-shop-button-url-in-the-cart-page/
 	add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+
+	//Removes billing from checkout
+	//source=https://gist.github.com/BFTrick/7873168
+	//add_filter(	'woocommerce_checkout_fields', 'remove_checkout_fields');
 ?>
