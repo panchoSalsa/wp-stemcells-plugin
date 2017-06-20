@@ -401,6 +401,7 @@ body.responsive.layout-full #page-wrapper .full-container {
     line-height: 1;
     font-family: Arial, Helvetica, sans-serif;
     vertical-align: top;
+    height: 40px;
 }
 
 a.cart-contents {
@@ -428,7 +429,6 @@ header.entry-header {
 a.added_to_cart.wc-forward {
     display: none;
 }
-
 
 /* hide images */
 img.attachment-shop_catalog.size-shop_catalog.wp-post-image {
